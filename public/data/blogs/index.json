@@ -1,0 +1,31 @@
+{
+  "posts": [
+    {
+      "slug": "spring-boot-actuator-info-disclosure-bypass",
+      "title": "How I Found and Bypassed a Spring Boot Actuator Information Disclosure Bug",
+      "date": "2024-07-18",
+      "readTime": "4 min",
+      "file": "/data/blogs/spring-boot-actuator-info-disclosure-bypass.md",
+      "excerpt": "From subdomain recon to discovering exposed Actuator endpoints and bypassing 401 with a clever path trick.",
+      "tags": ["Web Security", "Spring Boot", "Information Disclosure"]
+    },
+    {
+      "slug": "cache-poisoning-beginnings",
+      "title": "From Novice to Ninja: Unraveling Bug Bounty Beginnings through Cache Poisoning",
+      "date": "2024-05-10",
+      "readTime": "5 min",
+      "file": "/data/blogs/cache-poisoning-beginnings.md",
+      "excerpt": "My early bug bounty path: learning, scripts, and real-world wins via web cache poisoning.",
+      "tags": ["Bug Bounty", "Web Security", "Cache Poisoning"]
+    },
+    {
+      "slug": "sample-welcome",
+      "title": "Welcome to my writeups and blogs",
+      "date": "2025-10-12",
+      "readTime": "3 min",
+      "file": "/data/blogs/sample-welcome.md",
+      "excerpt": "This site reads Markdown from /public/data/blogs. Add new .md files and update index.json to publish.",
+      "tags": ["General"]
+    }
+  ]
+}
