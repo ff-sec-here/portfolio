@@ -4,7 +4,6 @@
       "slug": "spring-boot-actuator-info-disclosure-bypass",
       "title": "How I Found and Bypassed a Spring Boot Actuator Information Disclosure Bug",
       "date": "2024-07-18",
-      "readTime": "4 min",
       "file": "/data/blogs/spring-boot-actuator-info-disclosure-bypass.md",
       "excerpt": "From subdomain recon to discovering exposed Actuator endpoints and bypassing 401 with a clever path trick.",
       "tags": ["Web Security", "Web Security"]
@@ -12,18 +11,15 @@
     {
       "slug": "single-param-to-two-ato",
       "title": "How a Single Parameter Led to Two ATO Cases",
-      "date": "2024-05-18, ",
-      "readTime": "6 min",
+      "date": "2024-05-18",
       "file": "/data/blogs/single-param-to-two-ato.md",
       "excerpt": "My path to discovering and reporting a stored XSS vulnerability in GitHub Codespaces.",
       "tags": ["Bug Bounty", "Web Security"]
-    }
-    ,
+    },
     {
       "slug": "cache-poisoning-beginnings",
       "title": "From Novice to Ninja: Unraveling Bug Bounty Beginnings through Cache Poisoning",
       "date": "2024-05-10",
-      "readTime": "5 min",
       "file": "/data/blogs/cache-poisoning-beginnings.md",
       "excerpt": "My early bug bounty path: learning, scripts, and real-world wins via web cache poisoning.",
       "tags": ["Bug Bounty", "Web Security"]
