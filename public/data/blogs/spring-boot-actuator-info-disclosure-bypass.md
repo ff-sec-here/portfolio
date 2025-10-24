@@ -1,3 +1,5 @@
+# How I Found and Bypassed a Spring Boot Actuator Information Disclosure Bug
+
 Greetings, community! Today, I want to share the fascinating journey of how I discovered an information disclosure bug in a **Spring Boot Actuator** while hunting on a bug bounty program on the **Inspectiv** platform, and the steps I took to **bypass** it.
 
 ![Discovery GIF](/images/discovery.gif)
