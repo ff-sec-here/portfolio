@@ -1,7 +1,3 @@
-# How a Single Parameter Led to Two ATO Cases
-
-**Published:** May 18, 2024
-
 Hey guys, Today, I'm excited to share an intriguing story about how a **single parameter** in an application led to two account takeover cases and earned me a **four-digit bounty**. The program is a private one on HackerOne, and I was among the first few hackers to get invited. I'll explain two bugs I found here. Both account takeover (**ATO**) cases are one-click exploits, meaning the victim only needed to perform a single interaction.
 
 ![Excited GIF](/images/excited.gif)

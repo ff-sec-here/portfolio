@@ -13,7 +13,7 @@
       "title": "How a Single Parameter Led to Two ATO Cases",
       "date": "2024-05-18",
       "file": "/data/blogs/single-param-to-two-ato.md",
-      "excerpt": "My path to discovering and reporting a stored XSS vulnerability in GitHub Codespaces.",
+      "excerpt": "A deep dive into two one-click account takeovers stemming from a single vulnerable parameter.",
       "tags": ["Bug Bounty", "Web Security"]
     },
     {
