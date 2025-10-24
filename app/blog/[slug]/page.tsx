@@ -86,19 +86,19 @@ export default function BlogPostPage() {
       <div className="flex items-start justify-between gap-4 mb-8">
         <div className="space-y-2">
           <div className="flex items-center gap-3 text-xs text-muted-foreground font-mono">
-            <span>{post.date}</span>
-            {computedMinutes ? <span>{computedMinutes} min read</span> : null}
+        <span>{post.date}</span>
+        {computedMinutes ? <span>{computedMinutes} min read</span> : null}
           </div>
           <h1 className="text-3xl sm:text-4xl font-light text-pretty">{post.title}</h1>
         </div>
 
         <div className="flex items-center gap-2">
           <Link
-            href="/"
-            className="px-3 py-2 text-sm border border-border rounded-md hover:border-muted-foreground/50 transition-colors"
-            aria-label="Back to home"
-          >
-            ← Home
+        href="/"
+        className="w-[77px] px-3 py-2 text-sm border border-border rounded-md hover:border-muted-foreground/50 transition-colors"
+        aria-label="Back to home"
+        >
+        ← Home
           </Link>
         </div>
       </div>
@@ -139,7 +139,7 @@ export default function BlogPostPage() {
                 <blockquote className="border-l-2 border-border pl-4 italic text-muted-foreground my-6" {...props} />
               ),
               hr: () => <hr className="border-border my-8" />,
-              code: ({ inline, className, children, ...props }) => {
+              code: ({ inline, className, children, ...props }: any) => {
                 if (inline) {
                   return (
                     <code className="rounded bg-muted px-1.5 py-0.5 text-[13px] text-foreground" {...props}>
@@ -154,7 +154,7 @@ export default function BlogPostPage() {
                 )
               },
             }}
-          />
+          >{markdown}</ReactMarkdown>
         ) : null}
       </article>
     </main>
