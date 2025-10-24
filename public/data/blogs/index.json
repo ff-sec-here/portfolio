@@ -6,7 +6,7 @@
       "date": "2024-07-18",
       "file": "/data/blogs/spring-boot-actuator-info-disclosure-bypass.md",
       "excerpt": "From subdomain recon to discovering exposed Actuator endpoints and bypassing 401 with a clever path trick.",
-      "tags": ["Web Security", "Web Security"]
+      "tags": ["Web Security", "Bug Bounty"]
     },
     {
       "slug": "single-param-to-two-ato",
