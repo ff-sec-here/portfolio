@@ -67,7 +67,7 @@ export default function BlogPostPage() {
       <main className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-16 py-20 sm:py-24 animate-fade-in-up">
         <div className="space-y-6">
           <h1 className="text-3xl sm:text-4xl font-light">Post not found</h1>
-          <p className="text-muted-foreground">We couldn’t find a blog with the slug “{slug}”.</p>
+          <p className="text-muted-foreground">We couldn't find a blog with the slug "{slug}".</p>
           <div>
             <Link
               href="/#blogs"
@@ -94,11 +94,11 @@ export default function BlogPostPage() {
 
         <div className="flex items-center gap-2">
           <Link
-            href="/#blogs"
+            href="/"
             className="px-3 py-2 text-sm border border-border rounded-md hover:border-muted-foreground/50 transition-colors"
-            aria-label="Back to list"
+            aria-label="Back to home"
           >
-            Back
+            ← Home
           </Link>
         </div>
       </div>
@@ -148,27 +148,13 @@ export default function BlogPostPage() {
                   )
                 }
                 return (
-                  <code className={className} {...props}>
+                  <code className={`rounded bg-muted px-3 py-1 text-sm font-mono ${className}`} {...props}>
                     {children}
                   </code>
                 )
               },
-              pre: ({ node, ...props }) => (
-                <pre
-                  className="bg-muted border border-border rounded-lg p-4 overflow-x-auto text-sm leading-relaxed"
-                  {...props}
-                />
-              ),
-              img: ({ node, ...props }) => (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img className="rounded-lg border border-border my-6" alt="" {...props} />
-              ),
-              strong: ({ node, ...props }) => <strong className="text-foreground" {...props} />,
-              em: ({ node, ...props }) => <em className="text-foreground/90" {...props} />,
             }}
-          >
-            {markdown}
-          </ReactMarkdown>
+          />
         ) : null}
       </article>
     </main>

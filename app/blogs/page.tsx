@@ -85,6 +85,15 @@ export default function BlogsPage() {
 
   return (
     <main className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-16">
+      <div className="mb-8">
+        <Link
+          href="/"
+          className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+        >
+          ← Back to home
+        </Link>
+      </div>
+
       <header className="mb-10">
         <h1 className="text-3xl sm:text-4xl font-medium tracking-tight text-foreground">Writeups & Blogs</h1>
         <p className="mt-2 text-sm text-muted-foreground">All posts, sorted by most recent.</p>
