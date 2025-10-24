@@ -1,5 +1,3 @@
-# From Novice to Ninja: Unraveling Bug Bounty Beginnings through Cache Poisoning
-
 I dived into the exciting world of bug bounty hunting, and I couldn't have made it this far without the incredible support of the bug bounty community. As I begin sharing my experiences, I want to extend my heartfelt thanks to everyone who has been a part of this journey with me.
 
 This write-up is my way of expressing my appreciation for their guidance as I take my first steps into sharing my bug bounty experiences. There's so much more to come, and I'm grateful for the support that has brought me to this point.
