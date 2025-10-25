@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "slug": "labgenie-automating-security-lab-creation",
+      "title": "LabGenie: Creating Vulnerable Labs Based on Vulnerability Write-ups",
+      "date": "2025-10-25",
+      "file": "/data/blogs/labgenie-automating-security-lab-creation.md",
+      "excerpt": "Building a multi-agent AI tool that transforms vulnerability write-ups into fully functional, runnable security labs in minutes.",
+      "tags": ["Security Research", "AI/ML", "Development"]
+    },
+        {
+      "slug": "pnl-manipulation",
+      "title": "PnL Manipulation Vulnerability in a Major Trading Platform",
+      "date": "2025-09-09",
+      "file": "/data/blogs/pnl-manipluation.md",
+      "excerpt": "Discovering and exploiting a profit and loss manipulation vulnerability in a leading trading platform, bypassing server-side validations.",
+      "tags": ["Bug Bounty", "Web Security"]    },
+
+    {
       "slug": "spring-boot-actuator-info-disclosure-bypass",
       "title": "How I Found and Bypassed a Spring Boot Actuator Information Disclosure Bug",
       "date": "2024-07-18",
