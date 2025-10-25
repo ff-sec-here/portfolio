@@ -2,7 +2,7 @@ Last week I was watching the Critical Thinking podcast where **Rez0 and Gr3pme**
 
 [![Critical Thinking Podcast](https://img.youtube.com/vi/l6O_ez2CTOo/0.jpg)](https://www.youtube.com/embed/l6O_ez2CTOo)
 
-I decided to dig deeper and read the paper: [**From CVE Entries to Verifiable Exploits**](https://arxiv.org/pdf/2509.01835). Shoutout to the researchers at **UC Santa Barbara** who created it—it's a wonderful multi-agent framework that generates **POC** code from **CVE** entries. I was amazed after reading through their approach.
+I decided to dig deeper and read the paper: [**From CVE Entries to Verifiable Exploits**](https://arxiv.org/pdf/2509.01835). Shoutout to the researcher [**Saad Ullah**](https://www.linkedin.com/in/saadullah01/) and his team, who created it—it's a wonderful multi-agent framework that generates **POC** code from **CVE** entries. I was amazed after reading through their approach.
 
 That's when I got an idea to build something similar, but focused on a different problem. **LabGenie** isn't as complex as **CVE-GENIE**, but it tackles a related challenge that I've personally experienced.
 
