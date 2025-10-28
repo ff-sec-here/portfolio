@@ -1,4 +1,3 @@
-
 While conducting security research on cryptocurrency trading platforms, I stumbled upon a fascinating vulnerability that challenged everything I thought I knew about client-side security controls. What started as routine testing turned into a complex investigation of trust boundaries, data integrity, and the subtle ways attackers can exploit the gap between client and server validation.
 
 **NOTE:** Although the BB report for this vulnerability was rewarded as low severity, I felt compelled to share my experience because of the joy I had in uncovering the issue. The thrill of learning something entirely new, and the countless debugging sessions that made the process so engaging. It wasn't just about the bounty — it was about the journey of diving deep into the platform's mechanics, piecing together clues, and finally seeing the exploit in action. This discovery marked a whole new experience for me, both as a bug bounty hunter and as a learner.
@@ -11,13 +10,13 @@ The target? A popular trading platform that had implemented what appeared to be 
 
 The platform I was testing had clearly learned from common attack patterns. Traditional approaches like intercepting requests with Burp Suite or modifying POST data to generate a PNL through the PNL generation endpoint were met with immediate rejection:
 
-```json
+\`\`\`json
 {
   "success": false,
   "code": -1000,
   "message": "An internal error has occurred. We are unable to process your request. Please try again later."
 }
-```
+\`\`\`
 
 ## Understanding the Data Flow
 
@@ -26,13 +25,13 @@ I first needed to understand exactly how the platform generated Profit and Loss 
 ### Step 1: Balance Retrieval
 
 The client fetches portfolio data from:
-```
+\`\`\`
 https://gateway.tradehub.finance/user/wallet-summary
-```
+\`\`\`
 
 This returns comprehensive balance information:
 
-```json
+\`\`\`json
 {
   "success": true,
   "data": {
@@ -44,7 +43,7 @@ This returns comprehensive balance information:
     ]
   }
 }
-```
+\`\`\`
 
 ### Step 2: Client-Side Processing
 
@@ -54,7 +53,7 @@ The platform processes this data in the browser, calculating PnL values, formatt
 
 When a user clicks "Share," the platform sends processed data to:
 
-```http
+\`\`\`http
 POST /analytics/share-performance HTTP/2
 Host: gateway.tradehub.finance
 Content-Type: application/json
@@ -72,7 +71,7 @@ Content-Type: application/json
   "qr_code": "https://tradehub.finance/register?ref=G49FFEQC",
   "share_time": "2024-08-18 12:25:38"
 }
-```
+\`\`\`
 
 The key insight here was the `encode` parameter—clearly a hash designed to prevent tampering.
 
@@ -113,7 +112,7 @@ The vulnerability existed in a very specific timing window:
 
 I opened the browser's developer tools and navigated to the Sources tab. In the main JavaScript bundle, I searched for the fetch operation:
 
-```javascript
+\`\`\`javascript
 const T = (await fetch(p, {
   method: n,
   headers: f,
@@ -121,15 +120,15 @@ const T = (await fetch(p, {
   credentials: d
 })).json();
 return J1(await T, r == null ? void 0 : r.omitCodes),
-```
+\`\`\`
 
 ### Phase 2: The Conditional Breakpoint
 
 I set a conditional breakpoint on the fetch line with a specific condition:
 
-```javascript
+\`\`\`javascript
 p === "https://gateway.tradehub.finance/user/wallet-summary"
-```
+\`\`\`
 
 This ensured the breakpoint would only trigger for the wallet summary API call, not other requests.
 
@@ -138,22 +137,22 @@ This ensured the breakpoint would only trigger for the wallet summary API call, 
 Here's where the real breakthrough happened. When the breakpoint triggered, the HMAC verification passed and the data was stored in browser memory, I could manipulate it during runtime:
 
 **Original Response:**
-```json
+\`\`\`json
 {
   "token": "AAVE",
   "holding": 0.000080,
   "market_price": 136.605
 }
-```
+\`\`\`
 
 **Modified Response:**
-```json
+\`\`\`json
 {
   "token": "AAVE",
   "holding": 100.000080, // Inflated by 1,250,000%
   "market_price": 136.605
 }
-```
+\`\`\`
 
 I modified the `holding` parameter from 0.000080 to 100.000080—increasing my AAVE holdings by over a million percent.
 
@@ -163,9 +162,9 @@ I modified the `holding` parameter from 0.000080 to 100.000080—increasing my A
 
 The QR code manipulation had to be done during the share request generation, since this parameter wasn't protected by the response HMAC. When the share request was being prepared, I could modify:
 
-```json
+\`\`\`json
 "qr_code": "https://malicious-phishing-site.com/steal-credentials"
-```
+\`\`\`
 
 ### Phase 5: Generating the Fraudulent PnL
 

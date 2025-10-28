@@ -69,14 +69,14 @@ This also makes the system **more maintainable**. If I want to improve how labs 
 
 When LabGenie finishes running, you get a **complete lab directory** with everything you need:
 
-```
+\`\`\`
 output/sql-injection-lab/
 ├── lab_manifest.json      # Metadata about the lab
 ├── README.md              # Setup and usage instructions
 ├── REPRO.md               # Step-by-step reproduction guide
 ├── Dockerfile             # Single container setup
 └── src/                   # Vulnerable application code
-```
+\`\`\`
 
 LabGenie is smart about container orchestration. If the lab only needs a single container, it generates a simple Dockerfile. But if the vulnerability requires multiple services—say, a web application plus a separate database or a backend API—it creates a **docker-compose.yml file** instead to orchestrate everything properly.
 
