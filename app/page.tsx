@@ -55,23 +55,25 @@ export default function Home() {
         </div>
       </nav>
 
-      <main className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-16">
+      <main className="max-w-4xl mx-auto px-4 sm:px-6 md:px-8 lg:px-16">
         <header
           id="intro"
           ref={(el) => (sectionsRef.current[0] = el)}
           className="min-h-screen flex items-center opacity-0"
         >
-          <div className="grid lg:grid-cols-5 gap-12 sm:gap-16 w-full">
-            <div className="lg:col-span-3 space-y-6 sm:space-y-8">
-              <div className="space-y-3 sm:space-y-2">
-                <div className="text-sm text-muted-foreground font-mono tracking-wider">PORTFOLIO / 2025</div>
-                <h1 className="text-5xl sm:text-6xl lg:text-7xl font-light tracking-tight">
+          <div className="grid lg:grid-cols-5 gap-8 sm:gap-12 lg:gap-16 w-full">
+            <div className="lg:col-span-3 space-y-4 sm:space-y-6 lg:space-y-8">
+              <div className="space-y-2 sm:space-y-3">
+                <div className="text-xs sm:text-sm text-muted-foreground font-mono tracking-wider">
+                  PORTFOLIO / 2025
+                </div>
+                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light tracking-tight">
                   <span className="text-foreground">Fahad Faisal</span>
                 </h1>
               </div>
 
-              <div className="space-y-6 max-w-md">
-                <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
+              <div className="space-y-4 sm:space-y-6 max-w-md">
+                <p className="text-base sm:text-lg lg:text-xl text-muted-foreground leading-relaxed">
                   Security Researcher focused on offensive security and vulnerability research across{" "}
                   <span className="text-foreground">web & API</span>,{" "}
                   <span className="text-foreground">smart contracts</span>,{" "}
@@ -80,7 +82,7 @@ export default function Home() {
                   major platforms including Bugcrowd and HackerOne.
                 </p>
 
-                <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 text-sm text-muted-foreground">
+                <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-xs sm:text-sm text-muted-foreground">
                   <div className="flex items-center gap-2">
                     <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
                     Open to opportunities

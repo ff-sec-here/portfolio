@@ -82,28 +82,28 @@ export default function BlogPostPage() {
   }
 
   return (
-    <main className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-16 py-20 sm:py-24 animate-fade-in-up">
-      <div className="flex items-start justify-between gap-4 mb-8">
-        <div className="space-y-2">
-          <div className="flex items-center gap-3 text-xs text-muted-foreground font-mono">
-        <span>{post.date}</span>
-        {computedMinutes ? <span>{computedMinutes} min read</span> : null}
+    <main className="max-w-4xl mx-auto px-4 sm:px-6 md:px-8 lg:px-16 py-12 sm:py-16 lg:py-20 animate-fade-in-up">
+      <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-6 sm:mb-8">
+        <div className="space-y-2 flex-1">
+          <div className="flex items-center gap-3 text-[10px] sm:text-xs text-muted-foreground font-mono">
+            <span>{post.date}</span>
+            {computedMinutes ? <span>{computedMinutes} min read</span> : null}
           </div>
-          <h1 className="text-3xl sm:text-4xl font-light text-pretty">{post.title}</h1>
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-light text-pretty">{post.title}</h1>
         </div>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 w-full sm:w-auto">
           <Link
-        href="/"
-        className="w-[77px] px-3 py-2 text-sm border border-border rounded-md hover:border-muted-foreground/50 transition-colors"
-        aria-label="Back to home"
-        >
-        ← Home
+            href="/"
+            className="flex-1 sm:flex-none sm:w-auto px-3 py-2 text-xs sm:text-sm border border-border rounded-md hover:border-muted-foreground/50 transition-colors text-center"
+            aria-label="Back to home"
+          >
+            ← Home
           </Link>
         </div>
       </div>
 
-      <article className="space-y-6 sm:space-y-8">
+      <article className="space-y-4 sm:space-y-6 lg:space-y-8">
         {mdLoading && <div className="h-40 border border-border rounded animate-pulse" />}
         {mdError && (
           <div className="text-sm text-muted-foreground border border-border rounded-lg p-6">
@@ -115,46 +115,77 @@ export default function BlogPostPage() {
             remarkPlugins={[remarkGfm]}
             components={{
               h1: ({ node, ...props }) => (
-                <h1 className="text-3xl sm:text-4xl font-light mt-10 mb-4 text-pretty" {...props} />
-              ),
-              h2: ({ node, ...props }) => (
-                <h2 className="text-2xl sm:text-3xl font-light mt-10 mb-4 text-pretty" {...props} />
-              ),
-              h3: ({ node, ...props }) => (
-                <h3 className="text-xl sm:text-2xl font-medium mt-8 mb-3 text-pretty" {...props} />
-              ),
-              p: ({ node, ...props }) => <p className="text-muted-foreground leading-relaxed" {...props} />,
-              a: ({ node, ...props }) => (
-                <a
-                  className="underline underline-offset-4 decoration-muted-foreground hover:text-foreground transition-colors"
+                <h1
+                  className="text-2xl sm:text-3xl lg:text-4xl font-light mt-8 sm:mt-10 mb-3 sm:mb-4 text-pretty"
                   {...props}
                 />
               ),
-              ul: ({ node, ...props }) => <ul className="list-disc pl-6 space-y-2 text-muted-foreground" {...props} />,
+              h2: ({ node, ...props }) => (
+                <h2
+                  className="text-xl sm:text-2xl lg:text-3xl font-light mt-8 sm:mt-10 mb-3 sm:mb-4 text-pretty"
+                  {...props}
+                />
+              ),
+              h3: ({ node, ...props }) => (
+                <h3
+                  className="text-lg sm:text-xl lg:text-2xl font-medium mt-6 sm:mt-8 mb-2 sm:mb-3 text-pretty"
+                  {...props}
+                />
+              ),
+              p: ({ node, ...props }) => (
+                <p className="text-sm sm:text-base text-muted-foreground leading-relaxed" {...props} />
+              ),
+              a: ({ node, ...props }) => (
+                <a
+                  className="underline underline-offset-4 decoration-muted-foreground hover:text-foreground transition-colors break-words"
+                  {...props}
+                />
+              ),
+              ul: ({ node, ...props }) => (
+                <ul
+                  className="list-disc pl-5 sm:pl-6 space-y-2 text-sm sm:text-base text-muted-foreground"
+                  {...props}
+                />
+              ),
               ol: ({ node, ...props }) => (
-                <ol className="list-decimal pl-6 space-y-2 text-muted-foreground" {...props} />
+                <ol
+                  className="list-decimal pl-5 sm:pl-6 space-y-2 text-sm sm:text-base text-muted-foreground"
+                  {...props}
+                />
               ),
               li: ({ node, ...props }) => <li className="leading-relaxed" {...props} />,
               blockquote: ({ node, ...props }) => (
-                <blockquote className="border-l-2 border-border pl-4 italic text-muted-foreground my-6" {...props} />
+                <blockquote
+                  className="border-l-2 border-border pl-3 sm:pl-4 italic text-sm sm:text-base text-muted-foreground my-4 sm:my-6"
+                  {...props}
+                />
               ),
-              hr: () => <hr className="border-border my-8" />,
+              hr: () => <hr className="border-border my-6 sm:my-8" />,
               code: ({ inline, className, children, ...props }: any) => {
                 if (inline) {
                   return (
-                    <code className="rounded bg-muted px-1.5 py-0.5 text-[13px] text-foreground" {...props}>
+                    <code
+                      className="rounded bg-muted px-1.5 py-0.5 text-[12px] sm:text-[13px] text-foreground"
+                      {...props}
+                    >
                       {children}
                     </code>
                   )
                 }
                 return (
-                  <code className={`rounded bg-muted px-3 py-1 text-sm font-mono ${className}`} {...props}>
+                  <code
+                    className={`block rounded bg-muted px-3 py-2 text-xs sm:text-sm font-mono overflow-x-auto ${className}`}
+                    {...props}
+                  >
                     {children}
                   </code>
                 )
               },
+              img: ({ node, ...props }) => <img className="w-full h-auto rounded-lg my-4 sm:my-6" {...props} />,
             }}
-          >{markdown}</ReactMarkdown>
+          >
+            {markdown}
+          </ReactMarkdown>
         ) : null}
       </article>
     </main>

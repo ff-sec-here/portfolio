@@ -84,8 +84,8 @@ export default function BlogsPage() {
   }
 
   return (
-    <main className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-16">
-      <div className="mb-8">
+    <main className="mx-auto max-w-4xl px-4 sm:px-6 md:px-8 lg:px-16 py-12 sm:py-16 lg:py-20">
+      <div className="mb-6 sm:mb-8">
         <Link
           href="/"
           className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
@@ -94,15 +94,17 @@ export default function BlogsPage() {
         </Link>
       </div>
 
-      <header className="mb-10">
-        <h1 className="text-3xl sm:text-4xl font-medium tracking-tight text-foreground">Writeups & Blogs</h1>
-        <p className="mt-2 text-sm text-muted-foreground">All posts, sorted by most recent.</p>
+      <header className="mb-8 sm:mb-10">
+        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-medium tracking-tight text-foreground">
+          Writeups & Blogs
+        </h1>
+        <p className="mt-2 text-xs sm:text-sm text-muted-foreground">All posts, sorted by most recent.</p>
       </header>
 
-      <div className="flex flex-wrap gap-2 mb-8">
+      <div className="flex flex-wrap gap-2 mb-6 sm:mb-8">
         <button
           onClick={() => setSelectedTag(null)}
-          className={`px-3 py-1 text-xs border rounded-full transition-colors duration-300 ${
+          className={`px-2.5 sm:px-3 py-1 text-[11px] sm:text-xs border rounded-full transition-colors duration-300 ${
             selectedTag === null
               ? "border-foreground bg-foreground text-background"
               : "border-border hover:border-muted-foreground/50"
@@ -114,7 +116,7 @@ export default function BlogsPage() {
           <button
             key={tag}
             onClick={() => setSelectedTag(tag)}
-            className={`px-3 py-1 text-xs border rounded-full transition-colors duration-300 ${
+            className={`px-2.5 sm:px-3 py-1 text-[11px] sm:text-xs border rounded-full transition-colors duration-300 ${
               selectedTag === tag
                 ? "border-foreground bg-foreground text-background"
                 : "border-border hover:border-muted-foreground/50"
@@ -125,16 +127,16 @@ export default function BlogsPage() {
         ))}
       </div>
 
-      <div className="grid gap-6 sm:grid-cols-2">
+      <div className="grid gap-4 sm:gap-6 sm:grid-cols-2">
         {filteredPosts.map((post) => (
           <Link
             key={post.slug}
             href={`/blog/${post.slug}`}
-            className="group block rounded-lg border border-border p-6 transition-colors hover:bg-muted"
+            className="group block rounded-lg border border-border p-4 sm:p-6 transition-colors hover:bg-muted"
             aria-label={`Open ${post.title}`}
           >
-            <h3 className="text-xl font-medium text-foreground group-hover:underline">{post.title}</h3>
-            <p className="mt-2 text-sm text-muted-foreground">
+            <h3 className="text-lg sm:text-xl font-medium text-foreground group-hover:underline">{post.title}</h3>
+            <p className="mt-2 text-xs sm:text-sm text-muted-foreground">
               {new Date(post.date).toLocaleDateString(undefined, {
                 year: "numeric",
                 month: "short",
@@ -142,7 +144,7 @@ export default function BlogsPage() {
               })}
               {readTimes[post.slug] ? ` • ${readTimes[post.slug]} min read` : ""}
             </p>
-            {post.excerpt ? <p className="mt-3 text-sm text-muted-foreground">{post.excerpt}</p> : null}
+            {post.excerpt ? <p className="mt-3 text-xs sm:text-sm text-muted-foreground">{post.excerpt}</p> : null}
           </Link>
         ))}
       </div>
