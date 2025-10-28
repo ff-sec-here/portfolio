@@ -133,7 +133,7 @@ export default function BlogPostPage() {
                 />
               ),
               p: ({ node, ...props }) => (
-                <p className="text-sm sm:text-base text-muted-foreground leading-relaxed" {...props} />
+                <p className="text-sm sm:text-base text-foreground/90 leading-7 my-4" {...props} />
               ),
               a: ({ node, ...props }) => (
                 <a
