@@ -55,7 +55,7 @@ The final LabBuilder agent takes the plan and generates all the actual files. Th
 I went with Google's Gemini models for a few practical reasons. First, the **Gemini API is free to use**, which means anybody can try out LabGenie without worrying about API costs. This was important to me because I wanted the tool to be accessible to anyone curious about security.
 
 Second, **Gemini 2.5 Flash and 2.5 Pro give excellent responses** for this kind of task. The Flash model is fast and efficient for content validation, while Pro handles the complex reasoning needed for parsing vulnerabilities and generating code. The **2.5 Pro model also has a massive context window**, which is crucial when you're generating complete applications.
-That said, LabGenie is not tied to a single provider. Users can also change to **Vertex AI** as the provider via the `.env` file, making it easy to switch between different providers.
+That said, LabGenie is not tied to a single provider. Users can also change to **Vertex AI** as the provider via the .env file, making it easy to switch between different providers.
 I did experiment with other models too other than Gemini. **GPT-5 is also great at this task** and produces high-quality results. But for now, I'm sticking with Gemini as the default because of the free tier and straightforward API. 
 
 ### Multi-Agent vs Single Agent
